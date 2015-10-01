@@ -1,12 +1,12 @@
 module ModalHelper
 
-#  def default_options
-#    return {:id => 'modal', :size => '', :show_close => true, :dismiss => true}
-#  end
+  def default_options
+    return {:id => 'modal', :size => '', :show_close => true, :dismiss => true}
+  end
 
   #modals have a header, a body, a footer for options.
   def modal_dialog(options = {}, &block)
-    options.merge!(default_options)
+    default_options.merge!(options)
     content_tag :div, :class => "bootstrap-modal modal fade", :id => options[:id] do
       content_tag :div, :class => "modal-dialog #{options['size']}" do
         content_tag :div, :class => "modal-content" do
