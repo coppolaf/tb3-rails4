@@ -1,3 +1,7 @@
+NOTE: this repository is a copy of the original:  Twitter Bootstrap for Rails 3.x - 4 Asset Pipeline
+https://github.com/seyhunak/twitter-bootstrap-rails with some little customizations added for my personal projects all greetings goes to the original authors!!!
+
+
 # Twitter Bootstrap 3.2 for Rails 4 Asset Pipeline
 Bootstrap is a toolkit from Twitter designed to kickstart development of webapps and sites. It includes base CSS and HTML for typography, forms, buttons, tables, grids, navigation, and more.
 
@@ -565,7 +569,7 @@ It also takes the :pull option to drag it to the left or right.
 
 ### Flash helper
 
-Add flash helper `<%= bootstrap_flash %>` to your layout (built-in with layout generator).  
+Add flash helper `<%= bootstrap_flash %>` to your layout (built-in with layout generator).
 You can pass the attributes you want to add to the main div returned: `<%= bootstrap_flash(class: "extra-class", id: "your-id") %>`
 
 
