@@ -21,7 +21,7 @@ module NavbarHelper
         link_to path, options, &block
       else
         link_to name, path, options, &block
-      end 
+      end
     end
   end
 
@@ -107,9 +107,11 @@ module NavbarHelper
 
     position = "static-#{options[:static].to_s}" if options[:static]
     position = "fixed-#{options[:fixed].to_s}" if options[:fixed]
+    cust_class = options[:class].to_s if options[:class].present?
     inverse = (options[:inverse].present? && options[:inverse] == true) ? true : false
+    id = options[:id].to_s if options[:id].present?
 
-    content_tag :nav, :class => nav_bar_css_class(position, inverse), :role => "navigation" do
+    content_tag :nav, :class => nav_bar_css_class(position, inverse, cust_class), :role => "navigation", :id => id do
       yield
     end
   end
@@ -144,10 +146,11 @@ module NavbarHelper
     end
   end
 
-  def nav_bar_css_class(position, inverse = false)
+  def nav_bar_css_class(position, inverse = false, cust_class)
     css_class = ["navbar", "navbar-default"]
     css_class << "navbar-#{position}" if position.present?
     css_class << "navbar-inverse" if inverse
+    css_class << cust_class if cust_class.present?
     css_class.join(" ")
   end
 
